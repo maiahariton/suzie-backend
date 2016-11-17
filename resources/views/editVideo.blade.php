@@ -1,4 +1,5 @@
-@include('includes.head') <Style>
+@include('includes.head');
+ <Style>
 .border-form{    border: 1px solid #d2d2d2 !important;}.btn-success {
     background-color: #5cb85c !important; color:white !important; }
  .form-control{ border:1px solid rgba(204,204,204,1) !important;}.form-control, .form-group .form-control{ background-image: linear-gradient(white,white),linear-gradient(white,white) !important;}
@@ -17,38 +18,42 @@
  <div class="col-md-12">
 
  <div class="col-md-12">
- 	<div class="col-md-4"><h2>HomePage Video : add Video</h2></div>
+ 	<div class="col-md-12"><h2>HomePage Video : Edit Video</h2></div>
 </div>
- <div class="col-md-12 pb50">
-<h2><a href="#overview">Overview</a> | <a href="#carosel">Carosel</a> | <a href="#videos">Videos</a> | <a href="#callouts">Callouts</a> |</h2>
- </div>
-
-        <?php
-         echo Form::open(array('url' => 'addVideo','class' => 'form-horizontal'));
-           ?>
+ @include('includes.admin-navbar-1')
+    @foreach($video as $dbGetter)
+{!! Form::open(array('url' => 'updateVideo/'.$dbGetter->id.'/update','class' => 'form-horizontal')) !!}
 
 		   <div class="form-group">
 <div class="col-md-2">
      <label for="email">Title:</label>
   </div>
   <div class="col-md-10">
-    	  <?php  echo Form::text('title',null, array('class' => 'form-control')); ?>
+    	  {!!  Form::text('title',$dbGetter->title, array('class' => 'form-control')); !!}
           </div>
         </div>
           <div class="form-group">
             <div class="col-md-2">
      <label for="email">Video Type:</label>
   </div>
+
   <div class="col-md-10">
-         {!! Form::select('videoType', ['Youtube', 'etc', 'etc']) !!}
-          </div>
-         </div>
+       <select name="videoType" class="form-control">
+       <option value="{!! $dbGetter->videoType !!}" selected="">{!! $dbGetter->videoType !!}</option>
+      <option value="etc">etc</option>
+      <option value="etc">etc</option>
+      <option value="etc">etc</option>
+
+         </select>
+  </div>
+  </div>
+
           <div class="form-group">
          <div class="col-md-2">
      <label for="email">Video Url:</label>
   </div>
   <div class="col-md-10">
-           {!! Form::text('videoUrl',null, array('class' => 'form-control ')) !!}
+           {!! Form::url('videoUrl',$dbGetter->videoUrl, array('class' => 'form-control ')) !!}
             </div>
           </div>
 
@@ -57,22 +62,33 @@
      <label for="email">Order</label>
   </div>
         <div class="col-md-10">
-      {!! Form::text('order','0', array('class' => 'form-control ')) !!}
+      {!! Form::text('videoOrder', $dbGetter->videoOrder, array('class' => 'form-control ')) !!}
           </div>
         </div>
-        <div class="form-group">
+
+
+                  <div class="form-group"><input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                 <div class="col-md-offset-2 col-md-10">
+
+              {!! Form::submit('update!', array('class' => 'btn btn-success')); !!}
+              {!! Form::submit('Cancel!', array('class' => 'btn btn-success')); !!}
+              <a href="{!! url('/deleteVideo') !!}/{!! $dbGetter->id !!}" class="btn btn-warning">Delete</a>
+    <!--    <div class="form-group">
          <div class="col-md-2">
-     <label for="email">Order:</label>
+     <label for="email">Desired Page:</label>
   </div>
   <div class="col-md-10">
-          {!! Form::text('order',null, array('class' => 'form-control ')) !!}
+    <select name="pageId">
+    <option value="{!! $dbGetter->pageId !!}">{!! $dbGetter->pageId !!}</option>
+    <option></option>
+
+    </select>
             </div>
-          </div>
-          <div class="form-group">
-         <div class="col-md-offset-2 col-md-10">
-		   {!! Form::submit('update!', array('class' => 'btn btn-success')); !!}
-		</div>
+          </div> -->
+
          {!! Form::close() !!}
+         @endforeach
 
 		 </div>
    </div>

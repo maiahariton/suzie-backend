@@ -1,5 +1,4 @@
-@include('includes.head')
- <Style>
+@include('includes.head') <Style>
 .border-form{    border: 1px solid #d2d2d2 !important;}.btn-success {
     background-color: #5cb85c !important; color:white !important; }
  .form-control{ border:1px solid rgba(204,204,204,1) !important;}.form-control, .form-group .form-control{ background-image: linear-gradient(white,white),linear-gradient(white,white) !important;}
@@ -18,61 +17,54 @@
  <div class="col-md-12">
 
  <div class="col-md-12">
- 	<div class="col-md-4"><h2>HomePage</h2></div>
+ 	<div class="col-md-12"><h2>HomePage Callouts: Edit Callouts</h2></div>
 </div>
-@include('includes.admin-navbar-1');
+ <div class="col-md-12 pb50">
+<h2><a href="#overview">Overview</a> | <a href="#carosel">Carosel</a> | <a href="#videos">Videos</a> | <a href="#callouts">Callouts</a> |</h2>
+ </div>
 
-        <form method="post" enctype="multipart/form-data" action="addslides">
+        <?php
+         echo Form::open(array('url' => 'editCallouts','class' => 'form-horizontal'));
+           ?>
 
 		   <div class="form-group">
 <div class="col-md-2">
      <label for="email">Title:</label>
   </div>
   <div class="col-md-10">
-    	  <?php  echo Form::text('title',null, array('class' => 'form-control')); ?>
+    	  <?php  echo Form::text('Title',null, array('class' => 'form-control')); ?>
           </div>
         </div>
           <div class="form-group">
             <div class="col-md-2">
-     <label for="email">Headlines:</label>
+     <label for="email">Background Image:</label>
   </div>
   <div class="col-md-10">
-         {!! Form::text('headlines', null, array('class' => 'form-control ')) !!}
+         {!! Form::file('bgImg') !!}
           </div>
          </div>
           <div class="form-group">
          <div class="col-md-2">
-     <label for="email">Sub Headlines:</label>
+     <label for="email">Body Html:</label>
   </div>
   <div class="col-md-10">
-           {!! Form::text('subHeadlines',null, array('class' => 'form-control ')) !!}
-            </div>
-          </div>
-          <div class="form-group">
-          <div class="col-md-2">
-          <label for="text">Order:</label>
-          </div>
-          <div class="col-md-10">
-           {!! Form::text('order',null, array('class' => 'form-control ')) !!}
+          	 {!! Form::textarea('bodyhtml',null,['class'=>'form-control', 'rows' => 10, 'cols' => 10]) !!}
             </div>
           </div>
 
-            <div class="form-group">
-       <div class="col-md-2">
-     <label for="email">Slideshow Image:</label>
+
+        <div class="form-group">
+         <div class="col-md-2">
+     <label for="email">Order:</label>
   </div>
-        <div class="col-md-10">
-{!! Form::file('photo', ['class' => 'field']) !!}
-        </div>
-      </div>
-    </div>
-
+  <div class="col-md-10">
+          {!! Form::text('order',null, array('class' => 'form-control ')) !!}>
+            </div>
+          </div>
           <div class="form-group">
          <div class="col-md-offset-2 col-md-10">
-		   {!! Form::submit('Save!', array('class' => 'btn btn-success')); !!}
+		   {!! Form::submit('Save!', array('class' => 'btn btn-success')); !!} {!! Form::submit('Update!', array('class' => 'btn btn-success')); !!} {!! Form::submit('Delete!', array('class' => 'btn btn-success')); !!}
 		</div>
-    <input type="hidden" name="_token" value="{!! csrf_token() !!}">
-
          {!! Form::close() !!}
 
 		 </div>

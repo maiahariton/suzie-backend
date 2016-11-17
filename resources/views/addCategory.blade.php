@@ -17,56 +17,36 @@
  <div class="col-md-12">
 
  <div class="col-md-12">
- 	<div class="col-md-4"><h2>HomePage Video : add Video</h2></div>
+ 	<div class="col-md-12"><h2>Product Category:Add Category</h2></div>
 </div>
-@include('includes.admin-navbar-1');
+ <div class="col-md-12 pb50">
+<h2><a href="#overview">Overview</a> | <a href="#carosel">Carosel</a> | <a href="#videos">Videos</a> | <a href="#callouts">Callouts</a> |</h2>
+ </div>
 
         <?php
-         echo Form::open(array('url' => 'addvideo','class' => 'form-horizontal'));
+         echo Form::open(array('url' => 'addslides','class' => 'form-horizontal'));
            ?>
 
 		   <div class="form-group">
 <div class="col-md-2">
-     <label for="email">Title:</label>
+     <label for="email">Name:</label>
   </div>
   <div class="col-md-10">
-    	{!! Form::text('title',null, array('class' => 'form-control')); !!}
+    	  <?php  echo Form::text('name',null, array('class' => 'form-control')); ?>
           </div>
         </div>
-          <div class="form-group">
-            <div class="col-md-2">
-     <label for="email">Video Type:</label>
-  </div>
-  <div class="col-md-10">
-    <select name="videoType" class="form-control">
-    <option value="Youtube">Youtube</option>
-    <option value="etc">Youtube</option>
-    <option value="etc">Youtube</option>
 
-    </select>
-          </div>
-         </div>
-          <div class="form-group">
+        <div class="form-group">
          <div class="col-md-2">
-     <label for="email">Video Url:</label>
+     <label for="email">Order:</label>
   </div>
   <div class="col-md-10">
-           {!! Form::text('videoUrl',null, array('class' => 'form-control ')) !!}
+          {!! Form::text('order',null, array('class' => 'form-control ')) !!}
             </div>
           </div>
-
-            <div class="form-group">
-       <div class="col-md-2">
-     <label for="email">Order</label>
-  </div>
-        <div class="col-md-10">
-      {!! Form::text('videoOrder',null, array('class' => 'form-control ')) !!}
-          </div>
-        </div>
-
           <div class="form-group">
          <div class="col-md-offset-2 col-md-10">
-		   {!! Form::submit('Save!', array('class' => 'btn btn-success')); !!}
+		   {!! Form::submit('Save!', array('class' => 'btn btn-success')); !!} {!! Form::submit('Cancel!', array('class' => 'btn btn-success')); !!}
 		</div>
          {!! Form::close() !!}
 

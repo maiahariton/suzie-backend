@@ -1,5 +1,5 @@
 @include('includes.head')
- <Style>
+<Style>
 .border-form{    border: 1px solid #d2d2d2 !important;}.btn-success {
     background-color: #5cb85c !important; color:white !important; }
  .form-control{ border:1px solid rgba(204,204,204,1) !important;}.form-control, .form-group .form-control{ background-image: linear-gradient(white,white),linear-gradient(white,white) !important;}
@@ -18,18 +18,22 @@
  <div class="col-md-12">
 
  <div class="col-md-12">
- 	<div class="col-md-4"><h2>HomePage</h2></div>
+ 	<div class="col-md-12"><h2>HomePage Main SlideShow Carousel:Add Carousel</h2></div>
 </div>
-@include('includes.admin-navbar-1');
 
-        <form method="post" enctype="multipart/form-data" action="addslides">
+<div class="col-md-12 col-sm-12 col-xs-12 bg pb50">
+<img src=src="{!! asset('assets\img\Full Size\managing_debet_2560.jpg') !!}" style="max-height:300px;"></div>
+
+</div>
+      @foreach($user as $task)      <!-- actionupdated/{!! $task->id !!}-->
+        <form method="POST" enctype="multipart/form-data" action="update">
 
 		   <div class="form-group">
 <div class="col-md-2">
      <label for="email">Title:</label>
   </div>
   <div class="col-md-10">
-    	  <?php  echo Form::text('title',null, array('class' => 'form-control')); ?>
+         {!! Form::text('title', $task->title , array('class' => 'form-control ')) !!}
           </div>
         </div>
           <div class="form-group">
@@ -37,7 +41,7 @@
      <label for="email">Headlines:</label>
   </div>
   <div class="col-md-10">
-         {!! Form::text('headlines', null, array('class' => 'form-control ')) !!}
+         {!! Form::text('headlinesCaption', $task->headlinesCaption, array('class' => 'form-control ')) !!}
           </div>
          </div>
           <div class="form-group">
@@ -45,34 +49,40 @@
      <label for="email">Sub Headlines:</label>
   </div>
   <div class="col-md-10">
-           {!! Form::text('subHeadlines',null, array('class' => 'form-control ')) !!}
+           {!! Form::text('subHeadlinesCaption',$task->subHeadlinesCaption, array('class' => 'form-control ')) !!}
             </div>
           </div>
-          <div class="form-group">
-          <div class="col-md-2">
-          <label for="text">Order:</label>
-          </div>
-          <div class="col-md-10">
-           {!! Form::text('order',null, array('class' => 'form-control ')) !!}
+
+
+                <div class="form-group">
+               <div class="col-md-2">
+               <label for="email">Order:</label>
             </div>
-          </div>
+            <div class="col-md-10 pb10">
+                    {!! Form::text('slideOrder',$task->slideOrder, array('class' => 'form-control')) !!}
+
+                      </div>
+                    </div>
 
             <div class="form-group">
+
        <div class="col-md-2">
      <label for="email">Slideshow Image:</label>
-  </div>
+       </div>
         <div class="col-md-10">
-{!! Form::file('photo', ['class' => 'field']) !!}
+         {!! Form::file('image') !!}
+          </div>
         </div>
-      </div>
-    </div>
 
-          <div class="form-group">
+
+          <div class="form-group"><input type="hidden" name="_token" value="{{ csrf_token() }}">
+
          <div class="col-md-offset-2 col-md-10">
-		   {!! Form::submit('Save!', array('class' => 'btn btn-success')); !!}
-		</div>
-    <input type="hidden" name="_token" value="{!! csrf_token() !!}">
 
+      {!! Form::submit('update!', array('class' => 'btn btn-success')); !!}
+      {!! Form::submit('Cancel!', array('class' => 'btn btn-success')); !!}
+      <a href="{{url('/delete')}}/{{$task->id}}" class="btn btn-success">Delete</a>
+  @endforeach
          {!! Form::close() !!}
 
 		 </div>

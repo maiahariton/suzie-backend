@@ -16,30 +16,41 @@
  <div class="col-md-9">
 <div class="col-md-12">
 
- <div class="col-md-12">
- 	<h2>HomePage: Main Slide Show Video </h2>
+ <div class="col-md-12 pb50">
+ 	<h2>Products & Kits</h2>
 </div>
- @include('includes.admin-navbar-1');
- <div class="col-md-2 col-md-offset-10"><a href="http://localhost/suzeroman/public/addVideo"><button type="button" class="btn btn-success">add Video </button></div>
+
+ <div class="col-md-2 col-md-offset-10"><a href="http://localhost/suzeroman/public/addproduct"><button type="button" class="btn btn-success">add Product </button></div>
    <table class="table table-striped table-border border-form">
   <thead>
     <tr>
       <th>#</th>
-      <th colspan="5">Title</th>
+      <th>Title</th>
+      <th>Product Category</th>
+      <th>Flag</th>
       <th>Action</th>
+
     </tr>
   </thead>
   <tbody>
-      @foreach($video as $dbGetter)
-      <tr>
+    <tr>
+      <th scope="row">1</th>
+      <td>my money tool</td>
+          <td>best seller</td>
+              <td>sale</td>
+      <td><a href="#edit">edit</a></td>
 
-              <td>  {!! $dbGetter->id !!}</td>
-              <td colspan="5" class="text-center">  {!! $dbGetter->title !!}</td>
-              <td class="action" class="text-center"> <a class="btn btn-small btn-info" href="{!! URL::to('updateVideos/'. $dbGetter->id).'/edit' !!}">Edit this Slider</a>
-              </td>
          </tr>
 
-            @endforeach
+           <tr>
+             <th scope="row">2</th>
+             <td>My Audio CD's</td>
+                 <td>Audio CD's</td>
+                     <td>#1 new best seller</td>
+             <td><a href="#edit">edit</a></td>
+
+                </tr>
+
   </tbody>
 </table>
 

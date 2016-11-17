@@ -21,9 +21,7 @@
  <div class="col-md-12">
  	<div class="col-md-4"><h2>HomePage</h2></div>
 </div>
- <div class="col-md-12">
-<h2><a href="#overview">Overview</a> | <a href="#carosel">Carosel</a> | <a href="#videos">Videos</a> | <a href="#callouts">Callouts</a> |</h2>
- </div>
+@include('includes.admin-navbar-1');
 
   <form method="get" action="add">
 
@@ -32,7 +30,7 @@
      <label for="email">Page Title:</label>
   </div>
   <div class="col-md-10">
-    	  <?php  echo Form::text('pagetitle','PageTitle', array('class' => 'form-control form-border ')); ?>
+    	  <?php  echo Form::text('pagetitle',null, array('class' => 'form-control form-border ')); ?>
           </div>
         </div>
           <div class="form-group">
@@ -40,7 +38,7 @@
      <label for="email">Url:</label>
   </div>
   <div class="col-md-10">
-           <?php echo Form::text('url', 'example@gmail.com', array('class' => 'form-control ')); ?>
+           <?php echo Form::text('url', null, array('class' => 'form-control ')); ?>
           </div>
          </div>
           <div class="form-group">
@@ -48,7 +46,7 @@
      <label for="email">Meta Description:</label>
   </div>
   <div class="col-md-10">
-           <?php echo Form::text('metaDescription','Meta Description', array('class' => 'form-control ')); ?>
+           <?php echo Form::text('metaDescription',null, array('class' => 'form-control ')); ?>
             </div>
           </div>
            <div class="form-group">
@@ -56,7 +54,7 @@
      <label for="email">Meta Keywords:</label>
   </div>
   <div class="col-md-10">
-          <?php  echo Form::text('metaKeywords','Meta Keywords', array('class' => 'form-control ')); ?>
+          <?php  echo Form::text('metaKeywords',null, array('class' => 'form-control ')); ?>
            </div>
         </div>
 

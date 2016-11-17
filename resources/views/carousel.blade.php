@@ -15,41 +15,33 @@
 
  <div class="col-md-9">
 <div class="col-md-12">
-
  <div class="col-md-12">
  	<h2>HomePage: Main Slide Show Carousel</h2>
+
 </div>
- <div class="col-md-12 pb50">
-<h2><a href="#overview">Overview</a> | <a href="/carosel">Carousel</a> | <a href="#videos">Videos</a> | <a href="#callouts">Callouts</a> |</h2>
- </div>
- <div class="col-md-2 col-md-offset-10"><a href="http://localhost/suzeroman/public/add-slide"><button type="button" class="btn btn-success">add Slide </button></div>
+@include('includes.admin-navbar-1');
+
+ <div class="col-md-2 col-md-offset-10 pb10"><a href="http://localhost/suzeroman/public/addslide"><button type="button" class="btn btn-success">add Slide </button></div>
    <table class="table table-striped table-border border-form">
   <thead>
     <tr>
       <th>#</th>
-      <th>Title</th>
-      <th>Action</th>
+      <th colspan="5" class="text-center">Title</th>
+      <th class="action" class="text-center">Action</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Carousel 1</td>
-      <td><a href="#edit">edit</a></td>
+          @foreach($user as $task)
+<tr>
 
-         </tr>
-    <tr>
-      <th scope="row">2</th>
-       <td>Carousel 2</td>
-      <td><a href="#edit">edit</a></td>
+        <td>  {!! $task->id !!}</td>
+        <td colspan="5" class="text-center">  {!! $task->title !!}</td>
+        <td class="action" class="text-center"> <a class="btn btn-small btn-info" href="{!! URL::to('updateSlider/'. $task->id).'/edit' !!}">Edit this Slider</a>
+        </td>
+   </tr>
 
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-       <td>Carousel 3</td>
-      <td><a href="#edit">edit</a></td>
+      @endforeach
 
-    </tr>
   </tbody>
 </table>
 

@@ -1,7 +1,7 @@
-    @include('includes.head');
+    @include('includes.head')
 <div class="intro waitforimages2" style="margin-top:-20px;">
     <div class="intro-bg">
-        <img src="../assets/img/archived-folders-000065244433_Full.jpg" class="img-responsive" alt="">
+        <img src="{!! asset('assets/img/archived-folders-000065244433_Full.jpg') !!}" class="img-responsive" alt="">
     </div>
     <div class="intro-text intro-text--bottom">
         <div class="container text-center">
@@ -127,7 +127,7 @@
                     <hr>
                     <div class="row">
                         <figure class="col-lg-12 col-xl-7">
-                            <img src="../../assets/img/Canadian-Cottage-Life-000071981207_Full.jpg" class="img-responsive" alt="">
+                            <img src="{!! asset('assets/img/Canadian-Cottage-Life-000071981207_Full.jpg') !!}" class="img-responsive" alt="">
                         </figure>
                         <section class="col-lg-12 col-xl-5 font-18">
                             <h3 class="font-heading font-30 no-margin">Lorem ipsum dolor sit amet, consectetur.</h3>
@@ -200,7 +200,7 @@
                                 <br>
                                 <h3 class="font-40">SIGN UP FOR MY <span class="green-color"><b>FREE VIDEO</b></span> <br> <span class="green-color"><b>SERIES</b></span> RIGHT NOW !</h3>
                             </div>
-                            <img src="../assets/img/v-series-banner-no-bg.png" class="full-img" alt="">
+                            <img src="{!! asset('assets/img/v-series-banner-no-bg.png') !!}" class="full-img" alt="">
                         </div>
 
                         <div class="mainpage free-video-subscribe">
@@ -326,7 +326,7 @@
 
             <div class="video-series-box video-series-box-modal">
                 <div class="body">
-                    <img src="../assets/img/v-series-banner.jpg" class="modal-img" alt="">
+                    <img src="{!! asset('assets/img/v-series-banner.jpg') !!}" class="modal-img" alt="">
                     <div class="free-video-subscribe modal-subscribe">
                         <form action="">
                             <div class="form-group row">
