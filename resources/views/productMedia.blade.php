@@ -9,33 +9,36 @@
 <div class="col-md-12">
 
  <div class="col-md-12">
- 	<h2>Product Category</h2>
+ 	<h2>Product & Kits :Product Media</h2>
 </div>
- @include('includes.admin-navbar-1')
- <div class="col-md-2 col-md-offset-10 pb10"><a href="http://localhost/suzeroman/public/addcategory"><button type="button" class="btn btn-success">add Category </button></a></div>
-
-
-<tr>
-
-
+ @include('includes.product-navbar-1')
+ <div class="col-md-2 col-md-offset-10 pb10"><a href="http://localhost/suzeroman/public/addmedia"><button type="button" class="btn btn-success">add Media</button></a></div>
    <table class="table table-striped table-border border-form">
   <thead>
     <tr>
       <th>#</th>
       <th>Title</th>
+      <th>Media Type</th>
       <th>Action</th>
     </tr>
   </thead>
   <tbody>
-       @foreach($cate as $dbGetter)
     <tr>
-      <td scope="row">{!! $dbGetter->id !!}</td>
-      <td>{!! $dbGetter->name !!}</td>
-      <td> <a class="btn btn-small btn-info" href="{!! URL::to('updateCategory/'. $dbGetter->id).'/edit' !!}">Edit</a></td>
+      <th scope="row">1</th>
+      <td>Product 1</td>
+      <td>Image</td>
+      <td><a href="#edit">edit</a></td>
 
          </tr>
+    <tr>
+      <th scope="row">2</th>
+        <td>Product 1</td>
+      <td>Videos</td>
 
-    @endforeach
+      <td><a href="#edit">edit</a></td>
+
+    </tr>
+
   </tbody>
 </table>
 

@@ -1,5 +1,4 @@
 @include('includes.head')
-
 <div class="row">
  <div class="container-fluid">
 <div class="col-md-3">

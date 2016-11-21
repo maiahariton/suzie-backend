@@ -1,4 +1,4 @@
-@include('includes.head') 
+@include('includes.head')
 <div class="row">
  <div class="container-fluid">
 <div class="col-md-3">
@@ -9,17 +9,15 @@
 <div class="col-md-12">
 
  <div class="col-md-12 pb50">
- 	<h2>Products & Kits</h2>
+ 	<h2>Resrouces/h2>
 </div>
 
- <div class="col-md-2 col-md-offset-10"><a href="http://localhost/suzeroman/public/addproduct"><button type="button" class="btn btn-success">add Product </button></div>
+ <div class="col-md-2 col-md-offset-10 pb10"><a href="http://localhost/suzeroman/public/addresources"><button type="button" class="btn btn-success">add Product </button></a></div>
    <table class="table table-striped table-border border-form">
   <thead>
     <tr>
       <th>#</th>
       <th>Title</th>
-      <th>Product Category</th>
-      <th>Flag</th>
       <th>Action</th>
 
     </tr>
@@ -27,18 +25,15 @@
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>my money tool</td>
-          <td>best seller</td>
-              <td>sale</td>
-      <td><a href="#edit">edit</a></td>
+      <td>Wils & trust</td>
+  <td><a href="#edit">edit</a></td>
 
          </tr>
 
            <tr>
              <th scope="row">2</th>
-             <td>My Audio CD's</td>
-                 <td>Audio CD's</td>
-                     <td>#1 new best seller</td>
+             <td>Home Ownership</td>
+
              <td><a href="#edit">edit</a></td>
 
                 </tr>
