@@ -1,0 +1,75 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+
+class categoriesController extends Controller
+{
+  public function sliderController(){
+  $cate= new categoriesModel;
+
+  }
+
+  public function index(){
+    $cate = DB::table('slider')->where('status',1)->get();
+  return view("carousel",['user' => $cate]);
+  }
+
+  public function add(){
+    $cate= new categoriesModel;
+    $cate->title=Input::get("name");
+    $cate->headlinesCaption=Input::get("order");
+
+    $cate->status='1';
+    $cate->Save();
+
+    return view('productCategory');
+
+  }
+  public function edit($id){
+    $cate= new categoriesModel;
+   $cate = DB::table('categories')->where('id', $id)
+  	->where('status',1)->get();// where first() can be use but it will fetch all record
+    return view("updateSlider",['user' => $cate]);
+  }
+
+  public function update($id){
+              $cate= new categoriesModel;
+              $cate = categoriesModel::find($id);
+              $cate->title = Input::get('title');
+
+              $cate->headlinesCaption= Input::get('headlinesCaption');
+              $cate->subHeadlinesCaption= Input::get('subHeadlinesCaption');
+              $cate->slideOrder=Input::get('slideOrder');
+    if(Input::hasFile('image'))
+              {
+    $files = Input::file('image');
+              $upfile=new uploadFile;
+              $path="/app/uploads/";
+              $upfile->uploads($path,$files);  //passing file upload path and input name
+              $cate->image=$upfile->getImgName();
+            }
+              $cate->save();
+
+                    return redirect('carousel');
+                            }
+
+    public function store(Request $Request){
+
+      categoriesModel::create(Request::all());
+    }
+  public function delete($id)
+  {
+         //DB::delete('update slider set status=? where id = ?','0',[$id]);
+        //  return redirect('/')->with('success', 'Record has been deleted');
+
+        $cate= new categoriesModel;
+        $cate = categoriesModel::find($id);
+        $cate->status='0';
+        $cate->save();
+    return redirect('carousel');
+  }
+}

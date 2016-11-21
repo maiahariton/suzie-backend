@@ -33,8 +33,6 @@ public function add(){
                        $image=$file->getClientOriginalName();
                        $file->move(null.'\app\uploads', $image);
 
-
-
                    }
 
  $user->image=$file->getClientOriginalName();
@@ -56,17 +54,21 @@ public function update($id){
             $user= new sliderModel;
             $user = sliderModel::find($id);
             $user->title = Input::get('title');
-            $files = Input::file('image');
+
             $user->headlinesCaption= Input::get('headlinesCaption');
             $user->subHeadlinesCaption= Input::get('subHeadlinesCaption');
             $user->slideOrder=Input::get('slideOrder');
+  if(Input::hasFile('image'))
+            {
+  $files = Input::file('image');
             $upfile=new uploadFile;
             $path="/app/uploads/";
             $upfile->uploads($path,$files);  //passing file upload path and input name
             $user->image=$upfile->getImgName();
+          }
             $user->save();
 
-           return back()->withInput();
+                  return redirect('carousel');
                           }
 
   public function store(Request $Request){
@@ -82,8 +84,7 @@ public function delete($id)
       $user = sliderModel::find($id);
       $user->status='0';
       $user->save();
-
-     return back()->withInput();
+  return redirect('carousel');
 }
 
 }

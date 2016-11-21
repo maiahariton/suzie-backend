@@ -26,7 +26,7 @@ class videoController extends Controller
       $video->videoOrder=Input::get("videoOrder");
       $video->status='1';
       $video->Save();
-     return view('addvideos');
+     return view('addVideo');
 
     }
     public function edit($id){
@@ -43,7 +43,7 @@ class videoController extends Controller
                 $video->videoUrl= Input::get('videoUrl');
                 $video->videoOrder=Input::get('videoOrder');
                 $video->save();
-               return back()->withInput();
+              return redirect('videosHome');
                               }
 
       public function store(Request $Request){
