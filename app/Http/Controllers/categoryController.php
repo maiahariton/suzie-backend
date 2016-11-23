@@ -10,50 +10,49 @@ class categoryController extends Controller
 {
 
     public function categoryController(){
-    $cate= new categoryModel;
+    $product= new categoryModel;
 
     }
 
     public function index(){
-      $cate = DB::table('categories')->where('status',1)->get();
-    return view("productCategory",['cate' => $cate]);
+      $product = DB::table('category')->where('status',1)->get();
+    return view("productCategory",['product' => $product]);
     }
 
     public function add(){
-      $cate= new categoryModel;
-      $cate->name=Input::get("name");
-      $cate->catorder=Input::get("catorder");
+      $product= new categoryModel;
+      $product->name=Input::get("name");
+      $product->catorder=Input::get("catorder");
 
-      $cate->status='1';
-      $cate->Save();
+      $product->status='1';
+      $product->Save();
 
       return view('productCategory');
 
     }
     public function edit($id){
-      $cate= new categoryModel;
-     $cate = DB::table('categories')->where('id', $id)
+      $product= new categoryModel;
+     $product = DB::table('category')->where('id', $id)
     	->where('status',1)->get();// where first() can be use but it will fetch all record
-      return view("updateSlider",['cate' => $cate]);
+      return view("editCategory",['cate' => $product]);
     }
 
     public function update($id){
-                $cate= new categoryModel;
-                $cate = categoryModel::find($id);
-                $cate->title = Input::get('title');
-
-                $cate->headlinesCaption= Input::get('headlinesCaption');
-                $cate->subHeadlinesCaption= Input::get('subHeadlinesCaption');
-                $cate->slideOrder=Input::get('slideOrder');
+                $product= new categoryModel;
+                $product = categoryModel::find($id);
+                $product->title = Input::get('title');
+                $product->headlinesCaption= Input::get('headlinesCaption');
+                $product->subHeadlinesCaption= Input::get('subHeadlinesCaption');
+                $product->slideOrder=Input::get('slideOrder');
       if(Input::hasFile('image'))
                 {
       $files = Input::file('image');
                 $upfile=new uploadFile;
                 $path="/app/uploads/";
                 $upfile->uploads($path,$files);  //passing file upload path and input name
-                $cate->image=$upfile->getImgName();
+                $product->image=$upfile->getImgName();
               }
-                $cate->save();
+                $product->save();
 
                       return redirect('carousel');
                               }
@@ -67,10 +66,10 @@ class categoryController extends Controller
            //DB::delete('update slider set status=? where id = ?','0',[$id]);
           //  return redirect('/')->with('success', 'Record has been deleted');
 
-          $cate= new categoryModel;
-          $cate = categoryModel::find($id);
-          $cate->status='0';
-          $cate->save();
+          $product= new categoryModel;
+          $product = categoryModel::find($id);
+          $product->status='0';
+          $product->save();
       return redirect('carousel');
     }
 

@@ -21,7 +21,7 @@ class calloutContorller extends Controller
         $callout= new calloutModel;
         $callout->title=Input::get("title");
         $callout->status='1';
-        $file = Input::file('photo');
+        $file = Input::file('productImage');
         $callout->bodyHtml= Input::get('bodyHtml');
         $callout->calloutOrder= Input::get('calloutOrder');
         $upfile=new uploadFile;
