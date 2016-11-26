@@ -8,5 +8,5 @@ class sliderModel extends Model
 {
     protected $table = 'slider';
     public $timestamps = false;
-    protected $fillable = ['id','title', 'headlines', 'subHeadlinesCaption','slideOrder','image','status'];
+    protected $fillable = ['id','title', 'headLinesCaption', 'subHeadLinesCaption','slideOrder','image','status'];
 }
