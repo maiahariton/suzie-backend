@@ -13,7 +13,7 @@ private $imageName;
 public function uploads($route,$FileName){
 
                        $image=$FileName->getClientOriginalName();
-                       $FileName->move(public_path().'$route', $image);
+                       $FileName->move(public_path(). $route, $image);
                        $this->imageName=$FileName->getClientOriginalName();
 
  }

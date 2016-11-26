@@ -38,6 +38,7 @@ public function add(){
  $user->image=$file->getClientOriginalName();
   $user->slideOrder=Input::get("order");
   $user->status='1';
+
   $user->Save();
 
   return view('addslide');

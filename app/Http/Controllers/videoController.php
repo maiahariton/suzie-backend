@@ -27,12 +27,11 @@ class videoController extends Controller
       $video->status='1';
       $video->Save();
      return view('addVideo');
-
     }
     public function edit($id){
-      $video= new videoModel;
+     $video= new videoModel;
      $video = DB::table('videos')->where('id', $id)
-    	->where('status',1)->get();// where first() can be use but it will fetch all record
+     ->where('status',1)->get();// where first() can be use but it will fetch all record
       return view("editvideo",['video' => $video]);
     }
     public function update($id){
