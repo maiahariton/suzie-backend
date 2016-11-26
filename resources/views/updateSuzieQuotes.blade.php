@@ -8,18 +8,20 @@
 
  <div class="col-md-9">
  <div class="col-md-12">
-
  <div class="col-md-12 pb50">
- 	<div class="col-md-12"><h2>Suzie Quotes:Add Quotes</h2></div>
-</div>
-{!! Form::open(array('url' => 'addQuotes','files'=>'true','class' => 'form-horizontal'))  !!}
+ 	<div class="col-md-12"><h2>Suze Quotes :Edit Quote</h2></div>
+</div>@foreach($qutoes as $dbGetter)
+<img class='pb50' src='../../app/uploads/{!! $dbGetter->image !!}' height="300" width="300"></img>
+{!! Form::open(array('url' => 'updateSuzieQuotes/'.$dbGetter->id.'/update','method'=>'post','files'=>'true','class' => 'form-horizontal')) !!}
+
+
 
 		   <div class="form-group">
 <div class="col-md-2">
      <label for="text">Quote:</label>
   </div>
   <div class="col-md-10">
-    {!! Form::text('quotes',null, array('class' => 'form-control')) !!}
+    {!! Form::text('quotes',$dbGetter->quotes, array('class' => 'form-control')) !!}
           </div>
         </div>
 
@@ -28,7 +30,7 @@
       <label for="text">Display Date:</label>
    </div>
    <div class="col-md-10">
-     {!! Form::text('displayDate',null, array('class' => 'form-control')) !!}
+     {!! Form::text('displayDate',$dbGetter->displayDate, array('class' => 'form-control')) !!}
            </div>
          </div>
 
@@ -44,10 +46,11 @@
   <div class="form-group">
  <div class="col-md-offset-2 col-md-10">
 {!! Form::submit('Save!', array('class' => 'btn btn-success')); !!}
-{!! Form::reset('Cancel!', array('class' => 'btn btn-warning')); !!}
+    <a href="{!! url('/deleteSuzieQuote') !!}/{!! $dbGetter->id !!}" class="btn btn-warning">Delete</a>
+{!! Form::submit('Cancel!', array('class' => 'btn btn-info')); !!}
 </div>
          {!! Form::close() !!}
-
+  @endforeach
 		 </div>
    </div>
  <!--col-md-9-->

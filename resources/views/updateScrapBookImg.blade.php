@@ -10,11 +10,12 @@
  <div class="col-md-12">
 
  <div class="col-md-12 pb50">
- 	<div class="col-md-12"><h2>Suze's : Add Scrap Book</h2></div>
+ 	<div class="col-md-12"><h2>Suze's : Edit Scrap Book</h2></div>
 </div>
-<img src=''>
 
-        {!! Form::open(array('url' => 'addScrapImages','files'=>'true','method'=>'post','class' => 'form-horizontal')) !!}
+@foreach($sbImages as $dbGetter)
+<img src='../../app/uploads/{!! $dbGetter->image !!}'>
+{!! Form::open(array('url' => 'updateScrapBookImg/'.$dbGetter->id.'/update','method'=>'post','files'=>'true','class' => 'form-horizontal')) !!}
 
           <div class="form-group">
          <div class="col-md-2">
@@ -30,7 +31,7 @@
           <label for="text">Caption:</label>
           </div>
           <div class="col-md-10">
-          {!! Form::text('caption',null, array('class' => 'form-control')) !!}
+          {!! Form::text('caption',$dbGetter->caption, array('class' => 'form-control')) !!}
              </div>
            </div>
 
@@ -39,7 +40,7 @@
           <label for="text">Order:</label>
           </div>
           <div class="col-md-10">
-          {!! Form::text('order',null, array('class' => 'form-control')) !!}
+          {!! Form::text('order',$dbGetter->imgOrder, array('class' => 'form-control')) !!}
              </div>
            </div>
 
@@ -49,7 +50,7 @@
 {!! Form::submit('Cancel!', array('class' => 'btn btn-warning')); !!}
 </div>
          {!! Form::close() !!}
-
+@endforeach
 		 </div>
    </div>
  <!--col-md-9-->

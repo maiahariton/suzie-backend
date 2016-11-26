@@ -24,20 +24,30 @@
     </tr>
   </thead>
   <tbody>
-    @foreach($product as $dbGetter)
-<tr>
+    <tr>
+      <th scope="row">1</th>
+      <td>The Money Tool</td>
+      <td>BestSeller</td>
+      <td>Flag</td>
+      <td><a href="#edit">edit</a></td>
 
-  <td>  {!! $dbGetter->id !!}</td>
-  <td>{!! $dbGetter->title !!}   </td>
-  <td>{!! $dbGetter->name !!}</td>
-  <td>{!! $dbGetter->flag !!}</td>
-  <td class="action" class="text-center"> <a class="btn btn-small btn-info" href="{!! URL::to('updateProduct/'. $dbGetter->id).'/edit' !!}">Edit this Product</a>
-  </td>
-</tr>
+         </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>My Audio CD'S</td>
+      <td>Audio Cd</td>
+      <td>Best Seller New York Times</td>
+      <td><a href="#edit">edit</a></td>
+      <td><a href="#edit">edit</a></td>
 
-@endforeach
+    </tr>
+
   </tbody>
 </table>
+
+
+
+
  </div> <!--col-md-9-->
 </div>
 </div>

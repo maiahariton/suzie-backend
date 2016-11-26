@@ -16,14 +16,14 @@
 </div>
 @include('includes.admin-navbar-1')
 
-  {!! Form::open(array('add' => 'promocallout','class' => 'form-horizontal')) !!}
+  {!! Form::open(array('addSectionController@add' => 'promocallout','class' => 'form-horizontal')) !!}
 
 		   <div class="form-group">
 <div class="col-md-2">
      <label for="email">Page Title:</label>
   </div>
   <div class="col-md-10">
-    	  {!! Form::text('pagetitle',null, array('class' => 'form-control form-border ')) !!}
+    	  {!! Form::text('pageTitle',null, array('class' => 'form-control form-border ')) !!}
           </div>
       </div>
           <div class="form-group">
@@ -56,7 +56,7 @@
      <label for="email">Facebook Image:</label>
   </div>
         <div class="col-md-10">
-         {!! Form::file('Facebookimage'); !!}
+         {!! Form::file('FacebookImage'); !!}
           </div>
         </div>
           <div class="form-group">

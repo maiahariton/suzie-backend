@@ -2,28 +2,27 @@
 <div class="row">
  <div class="container-fluid">
 <div class="col-md-3">
- @include('includes.sidebar');
+ @include('includes.sidebar')
  </div>
 
  <div class="col-md-9">
  <div class="col-md-12">
 
  <div class="col-md-12">
- 	<div class="col-md-12"><h2>Products & Kits:add Media</h2></div>
+ 	<div class="col-md-12"><h2>Products & Kits:add Product: Add Content Section</h2></div>
 </div>
-<@include('includes.content-navbar-1');
+@include('includes.content-navbar-1')
 
 
-        <?php
-         echo Form::open(array('addsection' => 'addslides','class' => 'form-horizontal'));
-           ?>
+         {!! Form::open(array('url' => 'addproductcontent','class' => 'form-horizontal')) !!}
+
 
 		   <div class="form-group">
 <div class="col-md-2">
      <label for="email">Title:</label>
   </div>
   <div class="col-md-10">
-    	  <?php  echo Form::text('Title',null, array('class' => 'form-control')); ?>
+    	  {!! Form::text('title',null, array('class' => 'form-control')) !!}
           </div>
         </div>
           <div class="form-group">
@@ -31,7 +30,7 @@
      <label for="email">Body Html:</label>
   </div>
   <div class="col-md-10">
-        {!! Form::textarea('bodyhtml',null,['class'=>'form-control', 'rows' => 10, 'cols' => 10]) !!}
+        {!! Form::textarea('bodyHtml',null,['class'=>'form-control', 'rows' => 10, 'cols' => 10]) !!}
           </div>
          </div>
           <div class="form-group">

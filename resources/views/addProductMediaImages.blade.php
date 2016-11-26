@@ -9,30 +9,42 @@
  <div class="col-md-9">
  <div class="col-md-12">
 
- <div class="col-md-12 pb50">
- 	<div class="col-md-12"><h2>Suze's : Add Scrap Book</h2></div>
+ <div class="col-md-12 ">
+ 	<div class="col-md-12"><h2 class="pb50">Products & Kits:add Media</h2></div>
 </div>
-<img src=''>
 
-        {!! Form::open(array('url' => 'addScrapImages','files'=>'true','method'=>'post','class' => 'form-horizontal')) !!}
 
+         {!! Form::open(array('url' => 'addmedia','class' => 'form-horizontal')) !!}
+
+		   <div class="form-group">
+<div class="col-md-2">
+     <label for="text">name:</label>
+  </div>
+  <div class="col-md-10">
+    {!! Form::text('name',null, array('class' => 'form-control')) !!}
+          </div>
+        </div>
+          <div class="form-group">
+            <div class="col-md-2">
+     <label for="text">type:</label>
+  </div>
+  <div class="col-md-10">
+    <select name="videoType" class="form-control">
+    <option>Youtube</option>
+   <option value="etc">etc</option>
+   <option value="etc">etc</option>
+   <option value="etc">etc</option>
+</select>
+          </div>
+         </div>
           <div class="form-group">
          <div class="col-md-2">
-     <label for="email">Image:</label>
+     <label for="email">Product Images:</label>
   </div>
   <div class="col-md-10">
 {!! Form::file('image',array('class','form-control')) !!}
             </div>
           </div>
-
-          <div class="form-group">
-          <div class="col-md-2">
-          <label for="text">Caption:</label>
-          </div>
-          <div class="col-md-10">
-          {!! Form::text('caption',null, array('class' => 'form-control')) !!}
-             </div>
-           </div>
 
           <div class="form-group">
           <div class="col-md-2">

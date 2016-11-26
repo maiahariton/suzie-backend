@@ -27,11 +27,11 @@
     </tr>
   </thead>
   <tbody>
-       @foreach($cate as $dbGetter)
+       @foreach($product as $dbGetter)
     <tr>
       <td scope="row">{!! $dbGetter->id !!}</td>
       <td>{!! $dbGetter->name !!}</td>
-      <td> <a class="btn btn-small btn-info" href="{!! URL::to('updateCategory/'. $dbGetter->id).'/edit' !!}">Edit</a></td>
+      <td> <a class="btn btn-small btn-info" href="{!! URL::to('editCategory/'. $dbGetter->id).'/edit' !!}">Edit</a></td>
 
          </tr>
 
