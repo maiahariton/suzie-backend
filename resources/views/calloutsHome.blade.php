@@ -10,7 +10,7 @@
 <div class="col-md-12">
 
  <div class="col-md-12">
- 	<h2>HomePage Callouts:add Callouts</h2>
+ 	<h2>HomePage Callouts:Blog Callouts</h2>
 </div>
  <div class="col-md-2 col-md-offset-10"><a href="http://localhost/suzeroman/public/addcallouts"><button type="button" class="btn btn-success"><p class="text-white">add Callouts</p></a> </button></div>
    <table class="table table-striped border-form table-bordered">
@@ -29,7 +29,7 @@
        @foreach($callout as $dbGetter)
                <td>  {!! $dbGetter->id !!}</td>
                <td colspan="5" class="text-center">  {!! $dbGetter->title !!}</td>
-               <td class="action" class="text-center"> <a class="btn btn-small btn-info" href="{!! URL::to('updateCallouts/'. $dbGetter->id).'/edit' !!}">Edit this Slider</a>
+               <td class="action" class="text-center"> <a class="btn btn-small btn-info" href="{!! URL::to('updateCallouts/'. $dbGetter->id).'/edit' !!}">Edit</a>
                </td>
           </tr>
 

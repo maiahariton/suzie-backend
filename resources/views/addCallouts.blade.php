@@ -21,7 +21,7 @@
      <label for="email">Title:</label>
   </div>
   <div class="col-md-10">
-    	  <?php  echo Form::text('title',null, array('class' => 'form-control')); ?>
+    	{!! Form::text('title',null, array('class' => 'form-control')); !!}
           </div>
         </div>
           <div class="form-group">
@@ -29,7 +29,7 @@
      <label for="image">Background Image:</label>
   </div>
   <div class="col-md-10">
-      {!! Form::file('photo', ['class' => 'field']) !!}
+      {!! Form::file('image') !!}
           </div>
          </div>
           <div class="form-group">
@@ -47,6 +47,16 @@
   </div>
   <div class="col-md-10">
           {!! Form::text('calloutOrder',null, array('class' => 'form-control ')) !!}
+            </div>
+          </div>
+
+          <div class="form-group">
+         <div class="col-md-2">
+     <label for="email">pageId:</label>
+  </div>
+  <div class="col-md-10">
+
+          {!! Form::text('pageId',null, array('class' => 'form-control ')) !!}
             </div>
           </div>
           <div class="form-group">
