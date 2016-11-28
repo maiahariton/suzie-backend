@@ -8,6 +8,6 @@ class calloutModel extends Model
 {
   protected $table = 'callouts';
   public $timestamps = false;
-  protected $fillable = ['id','title', 'image', 'bodyHtml','calloutOrder','status'];
+  protected $fillable = ['id','title', 'image', 'bodyHtml','calloutOrder','pageId','status'];
 
 }
