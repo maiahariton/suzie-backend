@@ -12,18 +12,18 @@
  	<div class="col-md-12">
 
  <div class="col-md-12">
- 	<div class="col-md-4"><h2>HomePage</h2></div>
+ 	<div class="col-md-4"><h2>Homepage </h2></div>
 </div>
 @include('includes.admin-navbar-1')
 
-  {!! Form::open(array('add' => 'promocallout','class' => 'form-horizontal')) !!}
+  {!! Form::open(array('url' => 'addHomepage ','files'=>'true','class' => 'form-horizontal')) !!}
 
 		   <div class="form-group">
 <div class="col-md-2">
      <label for="email">Page Title:</label>
   </div>
   <div class="col-md-10">
-    	  {!! Form::text('pagetitle',null, array('class' => 'form-control form-border ')) !!}
+    	  {!! Form::text('title',null, array('class' => 'form-control form-border ')) !!}
           </div>
       </div>
           <div class="form-group">
@@ -56,12 +56,30 @@
      <label for="email">Facebook Image:</label>
   </div>
         <div class="col-md-10">
-         {!! Form::file('Facebookimage'); !!}
+         {!! Form::file('image'); !!}
           </div>
         </div>
+
+        <div class="form-group">
+         <div class="col-md-2">
+     <label for="email">Headlines:</label>
+  </div>
+  <div class="col-md-10">
+    {!! Form::text('headlines',null, array('class' => 'form-control ')) !!}
+      </div>
+          </div>
+          <div class="form-group">
+           <div class="col-md-2">
+       <label for="email">Body Text:</label>
+    </div>
+    <div class="col-md-10">
+      {!! Form::text('bodyText',null, array('class' => 'form-control ')) !!}
+        </div>
+            </div>
+
           <div class="form-group">
          <div class="col-md-offset-2 col-md-10">
-		  {!! Form::submit('Save!', array('class' => 'btn btn-success')) !!}
+		  {!! Form::submit('Save', array('class' => 'btn btn-success')) !!}
 		</div>
     {!! Form::close() !!}
 		 </div>
@@ -77,7 +95,7 @@
      <label for="email">Headlines:</label>
   </div>
   <div class="col-md-10">
-          <?php  echo Form::text('nleadlines',null, array('class' => 'form-control ')); ?>
+          {!! Form::text('headlines',null, array('class' => 'form-control ')); !!}
            </div>
         </div>
 
@@ -86,12 +104,25 @@
      <label for="email">Body/HTML:</label>
   </div>
   <div class="col-md-10">
-    	 {!! Form::textarea('bodyhtml',null,['class'=>'form-control', 'rows' => 10, 'cols' => 10]) !!}
+    	 {!! Form::textarea('bodyHtml',null,['class'=>'form-control', 'rows' => 10, 'cols' => 10]) !!}
 
           </div>
+
   </div>
+
+
+  		   <div class="form-group">
+  <div class="col-md-2">
+       <label for="email">Page Id:</label>
+    </div>
+    <div class="col-md-10">
+        {!! Form::text('pageId',null, array('class' => 'form-control ')); !!}
+
+            </div>
+
+    </div>
  <div class="col-md-offset-2 col-md-10">
-		   <?php echo Form::submit('Save!', array('class' => 'btn btn-success')); ?>
+		   {!! Form::submit('Save', array('class' => 'btn btn-success')); !!}
 		</div>
 
   {!! Form::close() !!}
@@ -126,7 +157,7 @@
   </div>
 
  <div class="col-md-offset-2 col-md-10">
-		   {!! Form::submit('Save!', array('class' => 'btn btn-success')) !!}
+		   {!! Form::submit('Save', array('class' => 'btn btn-success')) !!}
 		</div>
 
         {!! Form::close() !!}

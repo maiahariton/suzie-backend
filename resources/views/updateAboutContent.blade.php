@@ -55,19 +55,19 @@
            </div>
            <div class="col-md-offset-2 col-md-10">
 
-                {!! Form::submit('update!', array('class' => 'btn btn-success')); !!}
+                {!! Form::submit('Update', array('class' => 'btn btn-success')); !!}
 
   <a href="{!! url('/deleteAboutContent') !!}/{!! $dbGetter->id !!}" class="btn btn-warning">Delete</a>
   {!! Form::close() !!}
 
 @endforeach
-           <div class="col-md-2 col-md-offset-10 pb10"><a href="http://localhost/suzeroman/public/addcallouts"><button type="button" class="btn btn-success">add Callouts</button></a></div>
+           <div class="col-md-2 col-md-offset-10 pb10"><a href="/addcallouts"><button type="button" class="btn btn-success">Add Callouts</button></a></div>
              <table class="table table-striped table-border border-form">
             <thead>
               <tr>
                 <th>#</th>
                 <th>Title</th>
-                <th>Action</th>
+                <th class="text-center">Action</th>
 
               </tr>
             </thead>

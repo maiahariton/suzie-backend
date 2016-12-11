@@ -12,12 +12,11 @@
  	<div class="col-md-12"><h2>Products & Kits:add Products</h2></div>
 </div>
  <div class="col-md-12 pb50">
-<h2><a href="#overview">Overview</a> | <a href="contentsection">Content Section</a> </h2>
+@include('includes.content-navbar-1');
  </div>
 
-        <?php
-         echo Form::open(array('url' => 'addslides','class' => 'form-horizontal'));
-           ?>
+
+      {!! Form::open(array('url' => 'addProduct','class' => 'form-horizontal')); !!}
 
 		   <div class="form-group">
 <div class="col-md-2">
@@ -97,7 +96,7 @@
                <label for="email">Product Images:</label>
             </div>
             <div class="col-md-10">
-              {!! Form::file(null) !!}
+              {!! Form::file('productImage') !!}
                 </div>
                     </div>
                     <div class="form-group">
@@ -126,10 +125,19 @@
                       </div>
                           </div>
 
+                          <div class="form-group">
+                           <div class="col-md-2">
+                          <label for="email">Category Id</label>
+                          </div>
+                          <div class="col-md-10">
+                            {!! Form::text('categoryId',null, array('class' => 'form-control ')) !!}
+
+                          </div>
+                            </div>
           <div class="form-group">
          <div class="col-md-offset-2 col-md-10">
-		   {!! Form::submit('Save!', array('class' => 'btn btn-success')); !!}
-		</{!! Form::submit('Cancel!', array('class' => 'btn btn-success')); !!}
+		   {!! Form::submit('Save', array('class' => 'btn btn-success')); !!}
+		</{!! Form::submit('Cancel', array('class' => 'btn btn-success')); !!}
   </div>
          {!! Form::close() !!}
 

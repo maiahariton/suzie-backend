@@ -9,7 +9,7 @@
  <div class="col-md-12">
 
  <div class="col-md-12">
- 	<div class="col-md-12"><h2 class="pb50 padtop40">Resrouces :Edit Content Section</h2></div>
+ 	<div class="col-md-12"><h2 class="pb50 padtop40">Resources :Edit Content Section</h2></div>
 </div>
 
 @foreach($resContent as $dbGetter)
@@ -26,7 +26,7 @@
 
          <div class="form-group">
   <div class="col-md-2">
-       <label for="text">body/Html:</label>
+       <label for="text">Body/Html:</label>
     </div>
     <div class="col-md-10">
 
@@ -54,8 +54,8 @@
 
           <div class="form-group">
          <div class="col-md-offset-2 col-md-10">
-		   {!! Form::submit('Save!', array('class' => 'btn btn-success')); !!}
-		{!! Form::submit('Cancel!', array('class' => 'btn btn-success')); !!}
+		   {!! Form::submit('Save', array('class' => 'btn btn-success')); !!}
+		{!! Form::submit('Cancel', array('class' => 'btn btn-success')); !!}
   </div>
          {!! Form::close() !!}
 @endforeach

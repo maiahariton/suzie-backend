@@ -12,14 +12,14 @@
  	<h2>Product & Kits :Product Media</h2>
 </div>
  @include('includes.product-navbar-1')
- <div class="col-md-2 col-md-offset-10 pb10"><a href="http://localhost/suzeroman/public/addmedia"><button type="button" class="btn btn-success">add Media</button></a></div>
+ <div class="col-md-2 col-md-offset-10 pb10"><a href="/addmedia"><button type="button" class="btn btn-success">Add Media</button></a></div>
    <table class="table table-striped table-border border-form">
   <thead>
     <tr>
       <th>#</th>
       <th>Title</th>
       <th>Media Type</th>
-      <th>Action</th>
+      <th class="text-center">Action</th>
     </tr>
   </thead>
   <tbody>

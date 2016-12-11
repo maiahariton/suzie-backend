@@ -9,7 +9,7 @@
  <div class="col-md-12">
 
  <div class="col-md-12">
- 	<div class="col-md-12"><h2 class="pb50">Resrouces :add Section</h2></div>
+ 	<div class="col-md-12"><h2 class="pb50">Resources : Add Section</h2></div>
 </div>
 
       {!! Form::open(array('url' => 'addResroucesSection','method'=>'post','files'=>'true','class' => 'form-horizontal')) !!}
@@ -52,8 +52,8 @@
 
           <div class="form-group">
          <div class="col-md-offset-2 col-md-10">
-		   {!! Form::submit('Save!', array('class' => 'btn btn-success')); !!}
-		{!! Form::submit('Cancel!', array('class' => 'btn btn-success')); !!}
+		   {!! Form::submit('Save', array('class' => 'btn btn-success')); !!}
+		{!! Form::submit('Cancel', array('class' => 'btn btn-success')); !!}
   </div>
          {!! Form::close() !!}
 

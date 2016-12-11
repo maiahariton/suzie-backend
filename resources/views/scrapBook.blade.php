@@ -10,11 +10,11 @@
  <div class="col-md-12">
 
  <div class="col-md-12 pb50">
- 	<div class="col-md-12"><h2>Suze's : ScrapBook</h2></div>
+ 	<div class="col-md-12"><h2>Suze's : Scrapbook</h2></div>
 </div>
 <img src=''></img>
 
-           <div class="col-md-2 col-md-offset-10 pb10"><a href="http://localhost/test/public/addscrapbookimg"><button type="button" class="btn btn-success">add Scrapbook Images </button></a></div>
+           <div class="col-md-2 col-md-offset-10 pb10"><a href="/addscrapbookimages"><button type="button" class="btn btn-success">Add Scrapbook Images </button></a></div>
              <table class="table table-striped table-border border-form">
             <thead>
               <tr>
@@ -22,7 +22,7 @@
                 <th>Image</th>
                 <th>Caption</th>
                 <th>Year</th>
-                <th>Action</th>
+                <th class="text-center">Action</th>
 
               </tr>
             </thead>

@@ -10,16 +10,17 @@
  <div class="col-md-12">
 
  <div class="col-md-12">
- 	<div class="col-md-12"><h2>HomePage Main SlideShow Carousel:Add Carousel</h2></div>
+ 	<div class="col-md-12"><h2>Homepage  Main SlideShow Carousel : Update Carousel</h2></div>
 </div>
 
 <div class="col-md-12 col-sm-12 col-xs-12 bg pb50">
-<img src=src="{!! asset('assets\img\Full Size\managing_debet_2560.jpg') !!}" style="max-height:300px;"></div>
 
 </div>
       @foreach($user as $task)      <!-- actionupdated/{!! $task->id !!}-->
-        <form method="POST" enctype="multipart/form-data" action="update">
 
+      <img src="/app/uploads/{!! $task->image !!}" style="max-height:300px;" class="pb10"></div>
+      {!! Form::open(array('url' => 'updateSlider/'.$task->id.'/update','method'=>'post','files'=>'true','class' => 'form-horizontal')) !!}
+      
 		   <div class="form-group">
 <div class="col-md-2">
      <label for="email">Title:</label>
@@ -28,6 +29,7 @@
          {!! Form::text('title', $task->title , array('class' => 'form-control ')) !!}
           </div>
         </div>
+
           <div class="form-group">
             <div class="col-md-2">
      <label for="email">Headlines:</label>
@@ -59,7 +61,7 @@
             <div class="form-group">
 
        <div class="col-md-2">
-     <label for="email">Slideshow Image:</label>
+     <label for="email">SlideshowImage:</label>
        </div>
         <div class="col-md-10">
          {!! Form::file('image') !!}
@@ -71,8 +73,8 @@
 
          <div class="col-md-offset-2 col-md-10">
 
-      {!! Form::submit('update!', array('class' => 'btn btn-success')); !!}
-      {!! Form::submit('Cancel!', array('class' => 'btn btn-success')); !!}
+      {!! Form::submit('Update', array('class' => 'btn btn-success')); !!}
+      {!! Form::submit('Cancel', array('class' => 'btn btn-success')); !!}
       <a href="{{url('/delete')}}/{{$task->id}}" class="btn btn-success">Delete</a>
   @endforeach
          {!! Form::close() !!}

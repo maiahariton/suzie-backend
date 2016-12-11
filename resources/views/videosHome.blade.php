@@ -9,11 +9,11 @@
 <div class="col-md-12">
 
  <div class="col-md-12">
- 	<h2>HomePage: Main Slide Show Video </h2>
+ 	<h2>Homepage : Main Slideshow Video </h2>
 </div>
  @include('includes.admin-navbar-1')
 
- <div class="col-md-2 col-md-offset-10"><a href="http://localhost/suzeroman/public/addvideo"><button type="button" class="btn btn-success"><p class="text-white">add Video </p></a></button></div>
+ <div class="col-md-2 col-md-offset-10 pb10"><a href="/addvideo"><button type="button" class="btn btn-success"><span class="text-white">Add Video </span></button></a></div>
    <table class="table table-striped table-border border-form">
   <thead>
     <tr>
@@ -30,7 +30,7 @@
       @foreach($video as $dbGetter)
               <td>  {!! $dbGetter->id !!}</td>
               <td colspan="5" class="text-center">  {!! $dbGetter->title !!}</td>
-              <td class="action" class="text-center"> <a class="btn btn-small btn-info" href="{!! URL::to('updateVideos/'. $dbGetter->id).'/edit' !!}">Edit this Slider</a>
+              <td class="action text-center"> <a class="btn btn-small btn-info" href="{!! URL::to('updateVideos/'. $dbGetter->id).'/edit' !!}">Edit</a>
               </td>
          </tr>
 

@@ -10,26 +10,28 @@
  <div class="col-md-12">
 
  <div class="col-md-12">
- 	<div class="col-md-4"><h2>HomePage</h2></div>
+ 	<div class="col-md-12"><h2>Homepage  Main Slideshow Carousel : Add Carousel</h2></div>
 </div>
-@include('includes.admin-navbar-1');
+@include('includes.admin-navbar-1')
 
-        <form method="post" enctype="multipart/form-data" action="addslides">
+    {!! Form::open(array('url' => 'addslides','files'=>'true','class' => 'form-horizontal')); !!}
 
 		   <div class="form-group">
 <div class="col-md-2">
      <label for="email">Title:</label>
   </div>
   <div class="col-md-10">
-    	  {!!   Form::text('title',null, array('class' => 'form-control')); !!}
+    	  {!! Form::text('title',null, array('class' => 'form-control')); !!}
           </div>
         </div>
+
+
           <div class="form-group">
             <div class="col-md-2">
      <label for="email">Headlines:</label>
   </div>
   <div class="col-md-10">
-         {!! Form::text('headlines', null, array('class' => 'form-control ')) !!}
+         {!! Form::text('headlines', null, array('class' => 'form-control')); !!}
           </div>
          </div>
           <div class="form-group">
@@ -37,7 +39,7 @@
      <label for="email">Sub Headlines:</label>
   </div>
   <div class="col-md-10">
-           {!! Form::text('subHeadlines',null, array('class' => 'form-control ')) !!}
+           {!! Form::text('subHeadlines',null, array('class' => 'form-control')); !!}
             </div>
           </div>
           <div class="form-group">
@@ -45,23 +47,23 @@
           <label for="text">Order:</label>
           </div>
           <div class="col-md-10">
-           {!! Form::text('order',null, array('class' => 'form-control ')) !!}
+           {!! Form::text('order',null, array('class' => 'form-control')); !!}
             </div>
           </div>
 
             <div class="form-group">
        <div class="col-md-2">
-     <label for="email">Slideshow Image:</label>
+     <label for="email">SlideshowImage:</label>
   </div>
         <div class="col-md-10">
-{!! Form::file('photo', ['class' => 'field']) !!}
+{!! Form::file('image') !!}
         </div>
       </div>
-    </div>
+
 <input type="hidden" name="_token" value="{!! csrf_token() !!}">
           <div class="form-group">
          <div class="col-md-offset-2 col-md-10">
-		   {!! Form::submit('Save!', array('class' => 'btn btn-success')); !!}
+		   {!! Form::submit('Save', array('class' => 'btn btn-success')); !!}
 		</div>
 
 

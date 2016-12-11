@@ -10,17 +10,17 @@
  <div class="col-md-12">
 
  <div class="col-md-12 pb50">
- 	<div class="col-md-12"><h2> Suze's :About</h2></div>
+ 	<div class="col-md-12"><h2> Suze's : About</h2></div>
 </div>
 
-   <div class="col-md-2 col-md-offset-10 pb10"><a href="http://localhost/test/public/addaboutcontent"><button type="button" class="btn btn-success">add Featured Images </button></a></div>
+   <div class="col-md-2 col-md-offset-10 pb10"><a href="/addaboutcontent"><button type="button" class="btn btn-success">Add Featured Images </button></a></div>
              <table class="table table-striped table-border border-form">
             <thead>
               <tr>
                 <th>#</th>
-                <th>image</th>
-                <th>bodyText</th>
-                <th>action</th>
+                <th>Image</th>
+                <th>BodyText</th>
+                <th class="text-center">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -39,13 +39,13 @@
 </tbody>
 </table>
 
-           <div class="col-md-2 col-md-offset-10 pb10"><a href="http://localhost/suzeroman/public/addcallouts"><button type="button" class="btn btn-success">add Callouts</button></a></div>
+           <div class="col-md-2 col-md-offset-10 pb10"><a href="/addcallouts"><button type="button" class="btn btn-success">Add Callouts</button></a></div>
              <table class="table table-striped table-border border-form">
             <thead>
               <tr>
-                <th>#</th>
-                <th>Title</th>
-                <th>Action</th>
+                <th class="col-md-2">#</th>
+                <th class="col-md-8">Callouts</th>
+                <th class="col-md-2 text-center">Action</th>
 
               </tr>
             </thead>
@@ -53,9 +53,9 @@
               @foreach($aboutContent1 as $dbGetter2)
 
               <tr>
-                <th scope="row">{!! $dbGetter2->id  !!}</th>
-                <td>{!! $dbGetter2->title !!}</td>
-                <td class="action" class="text-center">
+                <th scope="row" class="col-md-2">{!! $dbGetter2->id  !!}</th>
+                <td class="col-md-8">{!! $dbGetter2->title !!}</td>
+                <td class="action" class="text-center col-md-2">
 <a class="btn btn-small btn-info" href="{!! URL::to('aboutContent/'. $dbGetter2->id).'/edit' !!}">Edit</a>
 </td>
 

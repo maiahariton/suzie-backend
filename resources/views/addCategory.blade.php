@@ -9,10 +9,10 @@
  <div class="col-md-12">
 
  <div class="col-md-12">
- 	<div class="col-md-12"><h2>Product Category:Add Category</h2></div>
+ 	<div class="col-md-12"><h2>Product Category : Add Category</h2></div>
 </div>
 
-      {!! Form::open(array('url' => 'add@categoryController','class' => 'form-horizontal')) !!}
+      {!! Form::open(array('url' => 'addCategory','class' => 'form-horizontal')) !!}
 
 		   <div class="form-group">
 <div class="col-md-2">
@@ -33,7 +33,7 @@
           </div>
           <div class="form-group">
          <div class="col-md-offset-2 col-md-10">
-		   {!! Form::submit('Save!', array('class' => 'btn btn-success')); !!} {!! Form::submit('Cancel!', array('class' => 'btn btn-success')); !!}
+		   {!! Form::submit('Save', array('class' => 'btn btn-success')); !!} {!! Form::submit('Cancel', array('class' => 'btn btn-success')); !!}
 		</div>
          {!! Form::close() !!}
 

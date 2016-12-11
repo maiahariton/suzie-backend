@@ -12,7 +12,7 @@
  	<h2>Product Category</h2>
 </div>
  @include('includes.admin-navbar-1')
- <div class="col-md-2 col-md-offset-10 pb10"><a href="http://localhost/suzeroman/public/addcategory"><button type="button" class="btn btn-success">add Category </button></a></div>
+ <div class="col-md-2 col-md-offset-10 pb10"><a href="/addcategory"><button type="button" class="btn btn-success">Add Category </button></a></div>
 
 
 <tr>

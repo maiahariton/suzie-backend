@@ -10,7 +10,7 @@
  <div class="col-md-12">
 
  <div class="col-md-12 pb50">
- 	<div class="col-md-12"><h2>Suze's : Add Scrap Book</h2></div>
+ 	<div class="col-md-12"><h2>Suze's : Add Scrapbook</h2></div>
 </div>
 <img src=''>
 
@@ -45,8 +45,8 @@
 
   <div class="form-group">
  <div class="col-md-offset-2 col-md-10">
-{!! Form::submit('Save!', array('class' => 'btn btn-success')); !!}
-{!! Form::submit('Cancel!', array('class' => 'btn btn-warning')); !!}
+{!! Form::submit('Save', array('class' => 'btn btn-success')); !!}
+{!! Form::submit('Cancel', array('class' => 'btn btn-warning')); !!}
 </div>
          {!! Form::close() !!}
 

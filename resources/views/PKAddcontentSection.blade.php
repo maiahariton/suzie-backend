@@ -12,7 +12,7 @@
  	<div class="col-md-12 "><h2>Products & Kits:add Product: Content Sections</h2></div>
 </div>
  @include('includes.product-navbar-1')
- <div class="col-md-2 col-md-offset-10 pb10"><a href="http://localhost/suzeroman/public/addsection"><button type="button" class="btn btn-success">add Section </button></a></div>
+ <div class="col-md-2 col-md-offset-10 pb10"><a href="/addsection"><button type="button" class="btn btn-success">add Section </button></a></div>
 
 
         {!! Form::open(array('addcontent' => 'addslides','class' => 'form-horizontal')) !!}
@@ -24,7 +24,7 @@
               <th>Title</th>
               <th>Product Category</th>
               <th>Flag</th>
-              <th>Action</th>
+              <th class="text-center">Action</th>
 
             </tr>
            </thead>

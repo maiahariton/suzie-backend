@@ -12,7 +12,7 @@
  	<h2>Suzie Quotes</h2>
 </div>
 
- <div class="col-md-2 col-md-offset-10 pb10"><a href="http://localhost/test/public/addquotes"><button type="button" class="btn btn-success ">add Quotes </button></a></div>
+ <div class="col-md-2 col-md-offset-10 pb10"><a href="/addquotes"><button type="button" class="btn btn-success ">Add Quotes </button></a></div>
    <table class="table table-striped table-border border-form">
   <thead>
     <tr>

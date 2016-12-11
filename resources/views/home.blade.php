@@ -1,5 +1,33 @@
 @include('includes.head')
-<div class="intro waitforimages2" style="margin-top:-20px;">
+<div id="achievement-carousel" class="owl-carousel">
+  @foreach($results['slider'] as $tasks)
+    <div class="owl-slide" style="background-image: url('app/uploads/{!! $tasks->image !!}');">
+            <div class="achievement-text text-white">
+            <span class="font-30 font-w-600 font-i">"
+                <span class="font-21 font-light">
+
+                </span>
+                <span class="font-30 font-w-600 font-i">
+            {!! $tasks->headlinesCaption !!}
+            </span><br>
+               <span class="font-21 font-light">
+
+                </span>
+                <span class="font-30 font-w-600 font-i">
+                    {!! $tasks->subHeadlinesCaption !!}
+                </span>"
+            </span>
+            <br>
+            <span class="font-i">{!! $tasks->title !!}</span>
+            <br><br>  <br><br>
+            <span>click through Suze's achievements below</span>
+        </div>
+    </div>
+
+    @endforeach
+</div>
+
+<!--<div class="intro waitforimages2" style="margin-top:-20px;">
 <div class="intro-bg">
     <img src="{!! asset('assets/img/archived-folders-000065244433_Full.jpg') !!}" class="img-responsive" alt="">
 </div>
@@ -13,8 +41,11 @@
         <span class="font-20">Suze Ozman</span>
     </div>
 </div>
-</div>
+</div>-->
 <!--/intro-->
+
+
+@foreach($results['products'] as $product)
 
 <!-- promo-box -->
 <div class="promo">
@@ -23,25 +54,25 @@
         <div class="col-xl-3 col-lg-6">
             <div class="promo-box first-box">
                 <div class="heading text-center">
-                    <h3 class="font-heading gradient-text">THE MONEY TOOLS</h3>
+                    <h3 class="font-heading gradient-text">{!! $product->title !!}</h3>
                 </div>
                 <div class="body clearfix bg-cover clearfix">
-                    <strong class="d-block text-center font-25">You can't afford to miss this HSN Exclusive</strong>
+                    <strong class="d-block text-center font-25">{!! $product->headlines !!}</strong>
                     <div class="col-sm-8 col-sm-push-4 text-right">
                                 <span class="font-21">
                                     <br>
-                                        Get the financial solutions <br>
-                                        kit everyone needs
+                                      {!!  $product->salesMessage !!}
                                         <br>
                                 </span>
                     </div>
+
                     <div class="col-sm-5 col-sm-push-7 font-14">
                         <a href="#" class="btn btn-dark-blue btn-block btn-block-new btn-rounded font-21 font-heading">Get Access</a>
-                        <a href="#" class="btn btn-teal btn-block btn-rounded btn-block-new font-21 font-heading">Buy Now</a>
+                        <a href="cart/{!! $product->salesPrice !!}" class="btn btn-teal btn-block btn-rounded btn-block-new font-21 font-heading">Buy Now</a>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>  @endforeach
         <div class="col-xl-3 col-lg-6">
             <div class="promo-box second-box">
                 <div class="heading text-center">
@@ -115,8 +146,7 @@
     </div>
 </div>
 </div>
-<!--/promo-box-->
-
+@foreach($results['blog'] as $blog)
 <!-- blog section -->
 <div class="page-section">
 <div class="container-fluid">
@@ -127,21 +157,24 @@
                 <hr>
                 <div class="row">
                     <figure class="col-lg-12 col-xl-7">
-                        <img src="{!! asset('assets/img/Canadian-Cottage-Life-000071981207_Full.jpg') !!}" class="img-responsive" alt="">
+                        <img src={!! asset('app/uploads/').'/'.$blog->fimage !!} class="img-responsive" alt="">
                     </figure>
                     <section class="col-lg-12 col-xl-5 font-18">
-                        <h3 class="font-heading font-30 no-margin">Lorem ipsum dolor sit amet, consectetur.</h3>
+                        <h3 class="font-heading font-30 no-margin">{!! $blog->pagetitle !!}</h3>
                         <p></p>
-                        <small>August 11, 2016 at 12:00am</small>
+                        <small>{!! $blog->created_at !!}/small>
                         <p></p>
                         <p class="font-25">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias, at blanditiis esse ipsam laborum laudantium nam necessitatibus optio quam rem, repellendus totam, unde voluptatum.
+                        {!! $blog->metaDescription !!}
                         </p>
                         <a href="#" class="font-bold font-25 text-dark-gray">read more</a>
                     </section>
                 </div>
+                @endforeach
+
                 <div class="row">
                     <div class="col-xs-12">
+
                         <div class="carousel-container">
                             <div class="next-btn">
                                 <a href="" class="carousel-nav"><i class="material-icons">keyboard_arrow_right</i></a>
@@ -149,35 +182,17 @@
                             <div class="prev-btn">
                                 <a href="" class="carousel-nav"><i class="material-icons">keyboard_arrow_left</i></a>
                             </div>
+
                             <div class="owl-carousel latest-blog-carousel">
+                                @foreach($results['blogshow'] as $blog)
                                 <div class="carousel-item">
-                                    <img src="http://placehold.it/480x270" class="img-responsive" alt="">
+                                  <img src={!! asset('app/uploads/').'/'.$blog->timage !!} class="img-responsive" alt="">
                                     <div class="carousel-text text-center">
-                                        <h4 class="text-white font-25 font-heading">Lorem ipsum dolor sit amet.</h4>
+                                        <h4 class="text-white font-25 font-heading">{!! $blog->pagetitle !!}.</h4>
                                         <a href="#" class="text-white font-25">Read</a>
                                     </div>
                                 </div>
-                                <div class="carousel-item">
-                                    <img src="http://placehold.it/480x270" class="img-responsive" alt="">
-                                    <div class="carousel-text text-center">
-                                        <h4 class="text-white font-25 font-heading">Lorem ipsum dolor sit amet.</h4>
-                                        <a href="#" class="text-white font-25">Read</a>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="http://placehold.it/480x270" class="img-responsive" alt="">
-                                    <div class="carousel-text text-center">
-                                        <h4 class="text-white font-heading">Lorem ipsum dolor sit amet.</h4>
-                                        <a href="#" class="text-white">Read</a>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="http://placehold.it/480x270" class="img-responsive" alt="">
-                                    <div class="carousel-text text-center">
-                                        <h4 class="text-white font-heading">Lorem ipsum dolor sit amet.</h4>
-                                        <a href="#" class="text-white">Read</a>
-                                    </div>
-                                </div>
+                                  @endforeach
                             </div>
                         </div>
                     </div>
@@ -186,6 +201,7 @@
 
             </div>
         </div>
+
         <div class="col-lg-6 col-xl-6 before-tweet">
             <div class="video-series-box">
                 <div class="heading">
@@ -244,21 +260,15 @@
         <div class="col-xs-12">
             <h3 class="font-60 font-heading text-center-video text-center">VIDEO</h3>
         </div>
+@foreach($results['videosOrder'] as $blog)
+
         <div class="col-sm-12 col-md-4 col-lg-4 no-padding first-video-mobile">
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ctbIRqsggZ8"></iframe>
+                <iframe class="embed-responsive-item" src="<?php echo $blog->videoUrl ?>"></iframe>
             </div>
         </div>
-        <div class="col-sm-12 col-md-4 col-lg-4 no-padding">
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/495QtC0qUCQ"></iframe>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-4 col-lg-4 no-padding">
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ctbIRqsggZ8"></iframe>
-            </div>
-        </div>
+@endforeach
+
     </div>
 </div>
 </div>

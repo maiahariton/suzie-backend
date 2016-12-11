@@ -1,4 +1,4 @@
-@include('includes.head') 
+@include('includes.head')
 <div class="row">
  <div class="container-fluid">
 <div class="col-md-3">
@@ -12,7 +12,7 @@
  	<h2>Products & Kits</h2>
 </div>
 
- <div class="col-md-2 col-md-offset-10"><a href="http://localhost/suzeroman/public/addproduct"><button type="button" class="btn btn-success">add Product </button></div>
+ <div class="col-md-2 col-md-offset-10"><a href="/addproduct"><button type="button" class="btn btn-success pb50">Add Product </button></div>
    <table class="table table-striped table-border border-form">
   <thead>
     <tr>
@@ -20,7 +20,7 @@
       <th>Title</th>
       <th>Product Category</th>
       <th>Flag</th>
-      <th>Action</th>
+      <th class="text-center">Action</th>
 
     </tr>
   </thead>

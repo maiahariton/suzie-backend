@@ -10,7 +10,7 @@
  <div class="col-md-12">
 
  <div class="col-md-12">
- 	<div class="col-md-12"><h2>Products & Kits:add Products</h2> @if(count($errors) > 0)
+ 	<div class="col-md-12"><h2>Products & Kits: Add Product</h2> @if(count($errors) > 0)
 
        <div class="alert alert-danger">
            <ul>
@@ -22,7 +22,7 @@
   @endif</div>
 </div>
  <div class="col-md-12 pb50">
-<h2><a href="#overview">Overview</a> | <a href="contentsection">Content Section</a> </h2>
+   @include('includes.content-navbar-1')
  </div>
 
 
@@ -144,10 +144,27 @@
                       </div>
                           </div>
 
+              <div class="form-group">
+                   <div class="col-md-2">
+                       <label for="text">Category Id:</label>
+                    </div>
+
+                 <div class="col-md-10">
+
+                    <select name="categoryId" class="form-control">
+<option value="">Select Product Category</option>
+                    @foreach($category as $cate)
+
+            <option value="{!! $cate->id !!}">{!! $cate->name !!}</option>
+                                @endforeach</select>
+
+                              </div></div>
+
+
           <div class="form-group">
          <div class="col-md-offset-2 col-md-10">
-		   {!! Form::submit('Save!', array('class' => 'btn btn-success')); !!}
-		</{!! Form::submit('Cancel!', array('class' => 'btn btn-success')); !!}
+		   {!! Form::submit('Save', array('class' => 'btn btn-success')); !!}
+		</{!! Form::submit('Cancel', array('class' => 'btn btn-success')); !!}
   </div>
          {!! Form::close() !!}
 

@@ -9,12 +9,12 @@
  <div class="col-md-9">
  <div class="col-md-12">
 
- <div class="col-md-12 pb50">
+ <div class="col-md-12 pb20">
  	<div class="col-md-12"><h2>Suze's : Edit Scrap Book</h2></div>
 </div>
 
 @foreach($sbImages as $dbGetter)
-<img src='../../app/uploads/{!! $dbGetter->image !!}'>
+<img class="pb50" src='../../app/uploads/{!! $dbGetter->image !!}'>
 {!! Form::open(array('url' => 'updateScrapBookImg/'.$dbGetter->id.'/update','method'=>'post','files'=>'true','class' => 'form-horizontal')) !!}
 
           <div class="form-group">
@@ -46,8 +46,8 @@
 
   <div class="form-group">
  <div class="col-md-offset-2 col-md-10">
-{!! Form::submit('Save!', array('class' => 'btn btn-success')); !!}
-{!! Form::submit('Cancel!', array('class' => 'btn btn-warning')); !!}
+{!! Form::submit('Save', array('class' => 'btn btn-success')); !!}
+{!! Form::submit('Cancel', array('class' => 'btn btn-warning')); !!}
 </div>
          {!! Form::close() !!}
 @endforeach

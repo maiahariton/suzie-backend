@@ -12,7 +12,7 @@
  	<h2>Product & Kits</h2>
 </div>
  @include('includes.admin-navbar-1')
- <div class="col-md-2 col-md-offset-10 pb10"><a href="http://localhost/suzeroman/public/addproduct"><button type="button" class="btn btn-success">add Product </button></a></div>
+ <div class="col-md-2 col-md-offset-10 pb10"><a href="/addproduct"><button type="button" class="btn btn-success">Add Product </button></a></div>
    <table class="table table-striped table-border border-form">
   <thead>
     <tr>
@@ -20,7 +20,7 @@
       <th>Title</th>
       <th>Product Category</th>
       <th>Flag</th>
-      <th>Action</th>
+      <th class="text-center">Action</th>
     </tr>
   </thead>
   <tbody>

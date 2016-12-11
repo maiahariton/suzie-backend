@@ -10,20 +10,20 @@
  <div class="col-md-12">
 
  <div class="col-md-12 pb50">
- 	<div class="col-md-12"><h2> Suze's :About</h2></div>
+ 	<div class="col-md-12"><h2> Suze's : About</h2></div>
 </div>
 <img src=''></img>
         <?php
          echo Form::open(array('url' => 'addquote','class' => 'form-horizontal'));
            ?>
 
-           <div class="col-md-2 col-md-offset-10 pb10"><a href="http://localhost/suzeroman/public/addfeaturedimg"><button type="button" class="btn btn-success">add Featured Images </button></a></div>
+           <div class="col-md-2 col-md-offset-10 pb10"><a href="/addfeaturedimg"><button type="button" class="btn btn-success">Add Featured Images </button></a></div>
              <table class="table table-striped table-border border-form">
             <thead>
               <tr>
                 <th>#</th>
                 <th>Title</th>
-                <th>Action</th>
+                <th class="text-center">Action</th>
 
               </tr>
             </thead>
@@ -65,7 +65,7 @@
              </div>
            </div>
 
-           <div class="col-md-2 col-md-offset-10 pb10"><a href="http://localhost/suzeroman/public/addcallouts"><button type="button" class="btn btn-success">add Callouts</button></a></div>
+           <div class="col-md-2 col-md-offset-10 pb10"><a href="/addcallouts"><button type="button" class="btn btn-success">Add Callouts</button></a></div>
              <table class="table table-striped table-border border-form">
             <thead>
               <tr>

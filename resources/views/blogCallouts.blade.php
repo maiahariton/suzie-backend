@@ -12,16 +12,16 @@
  	<div class="col-md-12">
 
  <div class="col-md-12">
- 	<div class="col-md-4"><h2>Blog Callouts</h2></div>
+ 	<div class="col-md-4"><h2> Callouts</h2></div>
 </div>
 
-<div class="col-md-2 col-md-offset-10 pb10"><a href="http://localhost/suzeroman/public/addCallouts"><button type="button" class="btn btn-success">add Callouts </button></a></div>
+<div class="col-md-2 col-md-offset-10 pb10 text-right" style="text-align:right: !important;"><a href="/addCallouts"><button type="button" class="btn btn-success">Add Callouts </button></a></div>
    <table class="table table-striped table-border border-form">
   <thead>
     <tr>
       <th>Title</th>
 
-      <th>Action</th>
+      <th style="text-align:right !important; padding-right:20px;" >Action</th>
 
     </tr>
   </thead>
@@ -30,8 +30,8 @@
 
     <tr>
 
-      <td>{!! $dbGetter->title !!}</td>
-      <td class="action" class="text-center"> <a class="btn btn-small btn-info" href="{!! URL::to('updateBlogCallouts/'. $dbGetter->id).'/edit' !!}">Edit</a>
+      <td class="col-md-8">{!! $dbGetter->title !!}</td>
+      <td class="action" class="text-center col-md-4"> <a class="btn btn-small btn-info alignment_adjust" href="{!! URL::to('updateBlogCallouts/'. $dbGetter->id).'/edit' !!}"><span class="text-right">Edit</span></a>
 
 
        </tr>
@@ -44,49 +44,30 @@
       <div class="col-md-4"><h2>Blog Posts</h2></div>
      </div>
 
-     <div class="col-md-2 col-md-offset-10 pb10"><a href="http://localhost/suzeroman/public/addblogpost"><button type="button" class="btn btn-success">add Posts </button></a></div>
+     <div class="col-md-2 col-md-offset-10 pb10"><a href="/addblogpost"><button type="button" class="btn btn-success">Add Posts </button></a></div>
        <table class="table table-striped table-border border-form">
       <thead>
         <tr>
-          <th>#</th>
-          <th>Title</th>
+          <th class="col-md-2">#</th>
+          <th class="col-md-8">Title</th>
 
-          <th>Action</th>
+          <th class="col-md-2" style="text-align:right !important; padding-right:20px;">Action</th>
 
         </tr>
       </thead>
       <tbody>
-        @foreach($callout as $dbGetter)
+        @foreach($posts as $dbGetter)
 
       <tr>
+        <td class="col-md-2">{!! $dbGetter->id !!}</td>
+        <td class="col-md-6">{!! $dbGetter->pagetitle !!}</td>
 
-        <td>{!! $dbGetter->title !!}</td>
-        <td class="action" class="text-center"> <a class="btn btn-small btn-info" href="{!! URL::to('updateBlogCallouts/'. $dbGetter->id).'/edit' !!}">Edit</a>
+<td class="text-center col-md-4"> <a class="btn btn-small btn-info alignment_adjust" href="{!! URL::to('updateBlogPosts/'. $dbGetter->id).'/edit' !!}"><span class="text-right">Edit</span></a>
 
 
          </tr>
 
          @endforeach
-
-
-          <th scope="row">1</th>
-          <td>Blog post one</td>
-            <td><a href="#edit">edit</a></td>
-
-             </tr>
-
-               <tr>
-                 <th scope="row">2</th>
-                 <td>Blog post two</td>
-                 <td><a href="#edit">edit</a></td>
-
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Blog post three</td>
-                      <td><a href="#edit">edit</a></td>
-
-                         </tr>
 
       </tbody>
      </table>

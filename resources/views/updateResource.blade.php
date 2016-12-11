@@ -9,11 +9,11 @@
  <div class="col-md-12">
 
  <div class="col-md-12">
- 	<div class="col-md-12"><h2 class="pb50">Resrouces :Edit Resources</h2></div>
+ 	<div class="col-md-12"><h2 class="pb50">Resources : Edit Resources</h2></div>
 </div>
   @foreach($resources as $dbGetter)
 
-<img src="../../app/uploads/{!! $dbGetter->image !!}" height="200" width="200" class="pb50">
+<img src="/app/uploads/{!! $dbGetter->image !!}" height="200" width="200" class="pb50">
   {!! Form::open(array('url' => 'updateResource/'.$dbGetter->id.'/update','files'=>'true','class' => 'form-horizontal')) !!}
 	 <div class="form-group">
 <div class="col-md-2">
@@ -29,7 +29,7 @@
        <label for="text">Background-Image:</label>
     </div>
     <div class="col-md-10">
-      <input type="file" name="image" value="{!! $dbGetter->image !!}">
+{!! Form::File('image') !!}
 
             </div>
           </div>
@@ -44,22 +44,22 @@
 
           <div class="form-group">
          <div class="col-md-offset-2 col-md-10">
-		   {!! Form::submit('Save!', array('class' => 'btn btn-success')); !!}
-		{!! Form::submit('Cancel!', array('class' => 'btn btn-success')); !!}
+		   {!! Form::submit('Save', array('class' => 'btn btn-success')); !!}
+		{!! Form::submit('Cancel', array('class' => 'btn btn-success')); !!}
   </div>
          {!! Form::close() !!}
 @endforeach
 		 </div>
      <div class="col-md-12">
-     	<div class="col-md-12 pb50"><h2>Resrouces :Content Section</h2></div>
+     	<div class="col-md-12 pb50"><h2>Resources : Content Section</h2></div>
     </div>
- <div class="col-md-2 col-md-offset-10 pb10"><a href="http://localhost/test/public/addresourcesection"><button type="button" class="btn btn-success">add Section </button></a></div>
+ <div class="col-md-2 col-md-offset-10 pb10"><a href="/addresourcesection"><button type="button" class="btn btn-success">Add Section </button></a></div>
     <table class="table table-striped table-border border-form">
    <thead>
      <tr>
        <th>#</th>
        <th>Title</th>
-       <th>Action</th>
+       <th class="text-center">Action</th>
 
      </tr>
    </thead>

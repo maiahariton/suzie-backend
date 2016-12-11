@@ -1,10 +1,18 @@
-@foreach($product as $task)
-<tr>
+<?php
 
-<td>  {!! $task->id !!}</td>
-<td colspan="5" class="text-center">  {!! $task->title !!}</td>
-<td class="action" class="text-center"> <a class="btn btn-small btn-info" href="{!! URL::to('updateSlider/'. $task->id).'/edit' !!}">Edit this Slider</a>
-</td>
-</tr>
+foreach($results['user'] as $task)
+{
 
-@endforeach
+  echo $task->title;
+}
+
+foreach($results['page'] as $task)
+{
+
+  echo $task->url;
+
+  
+}
+
+
+?>

@@ -9,7 +9,7 @@
  <div class="col-md-12">
 
  <div class="col-md-12">
- 	<div class="col-md-12"><h2>Products & Kits:add Products</h2>
+ 	<div class="col-md-12"><h2 class="pb50">Products & Kits : Edit Products</h2>
     @if(session('status'))
     <div class="alert alert-success">
         {!! session('status') !!}
@@ -21,7 +21,7 @@
 
 @foreach($product as $dbGetter)
 
-{!! Form::open(array('url' => 'updateProduct/'.$dbGetter->id.'/update','class' => 'form-horizontal')) !!}
+{!! Form::open(array('url' => 'updateProduct/'.$dbGetter->id.'/update','files'=>'true','class' => 'form-horizontal')) !!}
 
 
 
@@ -73,6 +73,15 @@
     {!! Form::text('listPrice',$dbGetter->listPrice , array('class' => 'form-control ')) !!}
       </div>
           </div>
+
+          <div class="form-group">
+           <div class="col-md-2">
+       <label for="email">Product Image:</label>
+    </div>
+    <div class="col-md-10">
+      {!! Form::file('productImage') !!}
+        </div>
+            </div>
           <div class="form-group">
            <div class="col-md-2">
        <label for="email">Sales Price:</label>
@@ -134,21 +143,27 @@
                   <div class="form-group">
                    <div class="col-md-2">
                <label for="text">Category Id:</label>
-            </div>
-                  <div class="col-md-10">
-                    {!! Form::text('categoryId',$dbGetter->categoryId , array('class' => 'form-control ')) !!}
+            </div>@endforeach
 
-                    </div>
-                          </div>
+         <div class="col-md-10">
+
+            <select name="categoryId" class="form-control">
+<option value="">Select Product Category</option>
+            @foreach($category as $cate)
+
+    <option value="{!! $cate->id !!}">{!! $cate->name !!}</option>
+                        @endforeach</select>
+
+                      </div></div>
 
           <div class="form-group">
          <div class="col-md-offset-2 col-md-10">
-		   {!! Form::submit('Save!', array('class' => 'btn btn-success')); !!}
-		</{!! Form::submit('Cancel!', array('class' => 'btn btn-success')); !!}
+		   {!! Form::submit('Save', array('class' => 'btn btn-success')); !!}
+  <a href="{!! url('/deleteProduct') !!}/{!! $dbGetter->id !!}" class="btn btn-warning">Delete</a>
   </div>
 
          {!! Form::close() !!}
-@endforeach
+
 		 </div>
    </div>
  <!--col-md-9-->

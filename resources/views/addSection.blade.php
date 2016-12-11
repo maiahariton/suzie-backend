@@ -12,7 +12,7 @@
  	<div class="col-md-12">
 
  <div class="col-md-12">
- 	<div class="col-md-4"><h2>HomePage</h2></div>
+ 	<div class="col-md-4"><h2>Homepage </h2></div>
 </div>
 @include('includes.admin-navbar-1')
 
@@ -61,7 +61,7 @@
         </div>
           <div class="form-group">
          <div class="col-md-offset-2 col-md-10">
-		  {!! Form::submit('Save!', array('class' => 'btn btn-success')) !!}
+		  {!! Form::submit('Save', array('class' => 'btn btn-success')) !!}
 		</div>
     {!! Form::close() !!}
 		 </div>
@@ -91,7 +91,7 @@
           </div>
   </div>
  <div class="col-md-offset-2 col-md-10">
-		   <?php echo Form::submit('Save!', array('class' => 'btn btn-success')); ?>
+		   <?php echo Form::submit('Save', array('class' => 'btn btn-success')); ?>
 		</div>
 
   {!! Form::close() !!}
@@ -126,7 +126,7 @@
   </div>
 
  <div class="col-md-offset-2 col-md-10">
-		   {!! Form::submit('Save!', array('class' => 'btn btn-success')) !!}
+		   {!! Form::submit('Save', array('class' => 'btn btn-success')) !!}
 		</div>
 
         {!! Form::close() !!}

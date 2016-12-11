@@ -57,7 +57,7 @@
           <div class="col-md-offset-2 col-md-10">
 
             <input type="hidden" name="_token" value="{!! csrf_token() !!}">
- 		   {!! Form::submit('Save!', array('class' => 'btn btn-success')); !!}
+ 		   {!! Form::submit('Save', array('class' => 'btn btn-success')); !!}
  		</div>
           {!! Form::close() !!}
 

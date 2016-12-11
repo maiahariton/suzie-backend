@@ -9,13 +9,11 @@
  <div class="col-md-12">
 
  <div class="col-md-12">
- 	<div class="col-md-12"><h2>HomePage Video : add Video</h2></div>
+ 	<div class="col-md-12"><h2>Homepage  Video : add Video</h2></div>
 </div>
 @include('includes.admin-navbar-1')
 
-        <?php
-         echo Form::open(array('url' => 'addVideos','class' => 'form-horizontal'));
-           ?>
+        {!! Form::open(array('url' => 'addVideos','class' => 'form-horizontal')); !!}
 
 		   <div class="form-group">
 <div class="col-md-2">
@@ -58,7 +56,7 @@
 
           <div class="form-group">
          <div class="col-md-offset-2 col-md-10">
-		   {!! Form::submit('Save!', array('class' => 'btn btn-success')); !!}
+		   {!! Form::submit('Save', array('class' => 'btn btn-success')); !!}
 		</div>
          {!! Form::close() !!}
 

@@ -50,7 +50,7 @@
            </div>
           <div class="form-group">
          <div class="col-md-2">
-     <label for="email">Thubmnail:</label>
+     <label for="email">Thumbnail:</label>
   </div>
   <div class="col-md-10">
 {!! Form::file('timage',array('class','form-control')) !!}
@@ -107,19 +107,20 @@
        </div>
        <div class="col-md-10">
             <select name="visibility" class="form-control">
-            <option value="1">Visibile</option>
+            <option value="1">Visible</option>
             <option value="0">Hidden</option>
+          </select>
           </div>
         </div>
 
   <div class="form-group">
  <div class="col-md-offset-2 col-md-10">
-{!! Form::submit('Save!', array('class' => 'btn btn-success')); !!}
+{!! Form::submit('Save', array('class' => 'btn btn-success')); !!}
+</div>
 </div>
          {!! Form::close() !!}
 
 		 </div>
-   </div>
  <!--col-md-9-->
 </div>
 </div>

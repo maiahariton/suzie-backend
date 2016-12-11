@@ -9,7 +9,7 @@
  <div class="col-md-12">
 
  <div class="col-md-12">
- 	<div class="col-md-12"><h2>HomePage Video : Edit Video</h2></div>
+ 	<div class="col-md-12"><h2>Homepage  Video : Edit Video</h2></div>
 </div>
  @include('includes.admin-navbar-1')
     @foreach($video as $dbGetter)
@@ -62,8 +62,8 @@
 
                  <div class="col-md-offset-2 col-md-10">
 
-              {!! Form::submit('update!', array('class' => 'btn btn-success')); !!}
-              {!! Form::submit('Cancel!', array('class' => 'btn btn-success')); !!}
+              {!! Form::submit('Update', array('class' => 'btn btn-success')); !!}
+              {!! Form::submit('Cancel', array('class' => 'btn btn-success')); !!}
               <a href="{!! url('/deleteVideo') !!}/{!! $dbGetter->id !!}" class="btn btn-warning">Delete</a>
 
 
@@ -72,6 +72,7 @@
 
 		 </div>
    </div>
+ </div>
  <!--col-md-9-->
 </div>
 </div>
